@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mini Preview</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Mini Preview</h1>
+
+      <label class="row">
+        <input id="enabled" type="checkbox" />
+        <span>Enable extension</span>
+      </label>
+
+      <label class="row">
+        <input id="privacyMode" type="checkbox" />
+        <span>Privacy mode (disable screenshots + form saving)</span>
+      </label>
+
+      <div class="section">
+        <div class="label">Overlay size</div>
+        <label class="row"><input type="radio" name="size" value="small" />Small</label>
+        <label class="row"><input type="radio" name="size" value="medium" />Medium</label>
+        <label class="row"><input type="radio" name="size" value="large" />Large</label>
+      </div>
+
+      <div class="section">
+        <div class="label">Allowlist (origins, one per line)</div>
+        <textarea id="allowlist" placeholder="https://example.com"></textarea>
+      </div>
+
+      <div class="section">
+        <div class="label">Blocklist (origins, one per line)</div>
+        <textarea id="blocklist" placeholder="https://example.com"></textarea>
+      </div>
+
+      <label class="row">
+        <input id="disableSite" type="checkbox" />
+        <span>Disable for this site</span>
+      </label>
+
+      <button id="save">Save</button>
+      <div id="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

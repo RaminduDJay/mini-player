@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Mini Preview Overlay + Form Autosave",
+  "version": "1.0.0",
+  "description": "Shows a mini preview of the previous page and autosaves forms.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_title": "Mini Preview",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "storage.js",
+        "url_normalize.js",
+        "dom_selectors.js",
+        "content/spa_router_hook.js",
+        "content/form_tracker.js",
+        "content/overlay_ui.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
